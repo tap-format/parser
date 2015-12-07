@@ -30,6 +30,7 @@
   "homepage": "https://github.com/untap/parse#readme",
   "devDependencies": {
     "highland": "^2.5.1",
+    "tape": "^4.2.2",
     "tessed": "^2.2.0"
   },
   "dependencies": {
