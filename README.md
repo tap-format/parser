@@ -1,12 +1,12 @@
 # Untap Parser
-A highly verbose parser for the [Test Anything Protocol](https://testanything.org/) that exposes a streaming and [observable](https://github.com/Reactive-Extensions/RxJS) based interface.
+A highly verbose parser for the [Test Anything Protocol](https://testanything.org/) that exposes a streaming and [observable](https://github.com/Reactive-Extensions/RxJS) interface.
 
 This is the parser used to create the following beautiful TAP formatters:
 
-* [@untap/spec]() - Formatted TAP output the like the Mocha spec reporter
-* [@untap/dot]() - Formatted TAP output with dots ... 
-* [@untap/failures]() - Formatted output for TAP assertion failures with diffs
-* [@untap/results]() - Formatted output for TAP runner results
+* [@untap/spec](https://github.com/untap/spec) - Formatted TAP output the like the Mocha spec reporter
+* [@untap/dot](https://github.com/untap/dot) - Formatted TAP output with dots ...
+* [@untap/failures](https://github.com/untap/failures) - Formatted output for TAP assertion failures with diffs
+* [@untap/results](https://github.com/untap/results) - Formatted output for TAP runner results
 
 ## Install
 
