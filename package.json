@@ -6,6 +6,9 @@
   "scripts": {
     "test": "tape test/*.js"
   },
+  "bin": {
+    "tap-out": "bin/cmd.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/untap/parse.git"
