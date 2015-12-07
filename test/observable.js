@@ -46,7 +46,7 @@ test('gets all tests', function (t) {
 
 test('parses assertion values', function (t) {
 
-  t.plan(8)
+  t.plan(9)
 
   return function (done) {
 
@@ -62,6 +62,7 @@ test('parses assertion values', function (t) {
         t.equal(line.assertionNumber, 1, 'assertionNumber')
         t.equal(line.testNumber, 1, 'testNumber')
         t.deepEqual(line.diagnostic, {a: 'b'}, 'diagnostic')
+        t.equal(line.rawDiagnostic, '  ---\n    a: b\n  ...', 'raw diagnostic')
       })
   }
 })

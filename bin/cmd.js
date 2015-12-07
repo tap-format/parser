@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-var tapOut = require('../')
+var parse = require('../')
 
 process.stdin
-  .pipe(tapOut.stream())
+  .pipe(parse.stream())
   .pipe(process.stdout)

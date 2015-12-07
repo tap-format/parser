@@ -453,7 +453,8 @@ function formatAssertionObject (line, testNumber) {
     title: m[3],
     raw: line.raw + '\n' + rawDiagnostic,
     ok: !m[1],
-    diagnostic: line.diagnostic, // TODO: rename this to "diagnostic"
+    diagnostic: line.diagnostic, // TODO: rename this to "diagnostic",
+    rawDiagnostic: rawDiagnostic,
     lineNumber: line.lineNumber,
     testNumber: testNumber,
     assertionNumber: line.assertionNumber
