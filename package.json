@@ -1,6 +1,6 @@
 {
-  "name": "@untap/parse",
-  "version": "1.0.0",
+  "name": "@untap/parser",
+  "version": "0.1.0",
   "description": "Parse TAP output",
   "main": "index.js",
   "scripts": {
