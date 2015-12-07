@@ -1,0 +1,41 @@
+{
+  "name": "@untap/parse",
+  "version": "1.0.0",
+  "description": "Parse TAP output",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untap/parse.git"
+  },
+  "keywords": [
+    "tap",
+    "parse",
+    "out",
+    "stream",
+    "test",
+    "anything",
+    "protocol"
+  ],
+  "author": "Scott Corgan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/untap/parse/issues"
+  },
+  "homepage": "https://github.com/untap/parse#readme",
+  "devDependencies": {
+    "highland": "^2.5.1",
+    "tessed": "^2.2.0"
+  },
+  "dependencies": {
+    "duplexer": "^0.1.1",
+    "js-yaml": "^3.4.6",
+    "ramda": "^0.18.0",
+    "readable-stream": "^2.0.4",
+    "rx": "^4.0.7",
+    "rx-node": "^1.0.1",
+    "split": "^1.0.0"
+  }
+}
