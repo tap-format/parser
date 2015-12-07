@@ -1,4 +1,4 @@
-# Untap Parser
+# Untap Parser [![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=flat-square)](https://travis-ci.org/untap/parser)
 A highly verbose parser for the [Test Anything Protocol](https://testanything.org/) that exposes a streaming and [observable](https://github.com/Reactive-Extensions/RxJS) interface.
 
 This is the parser used to create the following beautiful TAP formatters:
