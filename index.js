@@ -23,13 +23,13 @@ var TODO = 'TODO'
 var COMMENT_BLOCK_PADDING_SIZE = 2
 
 var REGEXES = {
+  test: /^#\s+(.+)/,
   assertion: new RegExp('^(not )?ok\\b(?:(?:\\s+(\\d+))?(?:\\s+(?:(?:\\s*-\\s*)?(.*)))?)?'),
-  result: new RegExp('(#)(\\s+)((?:[a-z][a-z]+))(\\s+)(\\d+)',['i']),
+  result: /^# (fail|tests|pass)\s+[0-9]+/,
   plan: /^(\d+)\.\.(\d+)\b(?:\s+#\s+SKIP\s+(.*)$)?/,
-  test: /^#\s*(.+)/,
   version: /^TAP\s+version\s+(\d+)/i,
   todo: /^(.*?)\s*#\s*TODO\s+(.*)$/,
-  skip: /^(.*?)\s*#\s*TODO\s+(.*)$/
+  skip: /^(.*?)\s*#\s*SKIP\s+(.*)$/
 }
 
 var removeCommentBlockPadding = R.map(R.drop(COMMENT_BLOCK_PADDING_SIZE))
@@ -143,18 +143,45 @@ function getComments$ (input$) {
   return formattedLines$
     .filter(function (line) {
 
-      if (
-        parsingCommentBlock
-        || isTest(line.current.raw)
-        || isAssertion(line.current.raw)
-        || isVersion(line.current.raw)
-        || isCommentBlockStart(line.current.raw)
-        || isCommentBlockEnd(line.current.raw)
-        || isPlan(line.current.raw)
-        || isResult(line.current.raw)
-        || isOk(line.current.raw)
-        || line.current.raw === ''
-      ) {
+      var raw = line.current.raw
+
+      if (parsingCommentBlock) {
+        return false
+      }
+
+      if (isTest(raw)) {
+        return false
+      }
+
+      if (isResult(raw)) {
+        return false
+      }
+
+      if (isAssertion(raw)) {
+        return false
+      }
+
+      if (isVersion(raw)) {
+        return false
+      }
+
+      if (isCommentBlockStart(raw)) {
+        return false
+      }
+
+      if (isCommentBlockEnd(raw)) {
+        return false
+      }
+
+      if (isPlan(raw)) {
+        return false
+      }
+
+      if (isOk(raw)) {
+        return false
+      }
+
+      if (raw === '') {
         return false
       }
 
@@ -340,9 +367,7 @@ function formatLinePair (pair, index) {
 function isTest (line) {
 
   return REGEXES.test.test(line)
-    && line.indexOf('# tests') < 0
-    && line.indexOf('# pass') < 0
-    && line.indexOf('# fail') < 0
+    && !isResult(line)
     && !isOk(line)
 }
 
