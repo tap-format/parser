@@ -1,7 +1,7 @@
 {
   "name": "@tap-format/parser",
   "version": "0.2.0",
-  "description": "Parse TAP output",
+  "description": "A highly verbose parser for the Test Anything Protocol that exposes an observable and streaming interface",
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.js"
