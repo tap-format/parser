@@ -1,17 +1,24 @@
-# Untap Parser [![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=flat-square)](https://travis-ci.org/untap/parser)
-A highly verbose parser for the [Test Anything Protocol](https://testanything.org/) that exposes a streaming and [observable](https://github.com/Reactive-Extensions/RxJS) interface.
+# tap-format parser [![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=flat-square)](https://travis-ci.org/tap-format/parser)
+A highly verbose parser for the [Test Anything Protocol](https://testanything.org/) that exposes an [observable](https://github.com/Reactive-Extensions/RxJS) and streaming interface.
 
 This is the parser used to create the following beautiful TAP formatters:
 
-* [@untap/spec](https://github.com/untap/spec) - Formatted TAP output the like the Mocha spec reporter
-* [@untap/dot](https://github.com/untap/dot) - Formatted TAP output with dots ...
-* [@untap/failures](https://github.com/untap/failures) - Formatted output for TAP assertion failures with diffs
-* [@untap/results](https://github.com/untap/results) - Formatted output for TAP runner results
+* [@tap-format/spec](https://github.com/tap-format/spec) - Formatted TAP output the like the Mocha spec reporter
+* [@tap-format/dot](https://github.com/tap-format/dot) - Formatted TAP output with dots ...
+* [@tap-format/failures](https://github.com/tap-format/failures) - Formatted output for TAP assertion failures with diffs
+* [@tap-format/results](https://github.com/tap-format/results) - Formatted output for TAP runner results
+
+### Node Version Support
+
+* 0.10
+* 0.12
+* iojs
+* >= 4.x
 
 ## Install
 
 ```
-npm install @untap/parse
+npm install @tap-format/parser --save
 ```
 
 ## Usage
@@ -21,7 +28,7 @@ npm install @untap/parse
 The parser exposes an interface that lets you deal with the parsed TAP with [Reactive Extensions](https://github.com/Reactive-Extensions/RxJS). See the [API]() section for a full list of exposed Observables.
 
 ```js
-var parse = require('@untap/parser')
+var parse = require('@tap-format/parser')
 
 var stream = process.stdin
 var tap$ = parser.observeStream(stream)
@@ -42,7 +49,7 @@ tap$.asserions$
 The parser will parse streaming data for any source.
 
 ```js
-var parser = require('@untap/parser')
+var parser = require('@tap-format/parser')
 var H = require('highland')
 
 var tapStream = H(process.stdin.pipe(parser.stream()))
@@ -68,7 +75,7 @@ assertions.each(function (assertion) {
 ### CLI
 
 ```
-$ something-that-produces-tap | untap-parser
+$ something-that-produces-tap | tap-format-parser
 {
 	// Parsed TAP output as JSON here
 }
@@ -81,7 +88,7 @@ $ something-that-produces-tap | untap-parser
 Given a streaming input, the parser will expose and [RXjs Observable](https://github.com/Reactive-Extensions/RxJS) chunked by new lines. In addition, the parser exposes the following properties as Observables as convenience methods for the parsed TAP.
 
 ```js
-var parser = requrie('@untap/parser')
+var parser = requrie('@tap-format/parser')
 
 var stream = process.stdin
 var tap$ = parser.observeStream(stream)
@@ -237,7 +244,7 @@ The shape of the **version** object is as follows:
 
 ### Streaming Interface
 
-Using `require('@untap/parser').stream()` returns a new-line-chunked stream of parsed TAP. It is a normal stream, and therefore exposes the very useful `pipe()` method.
+Using `require('@tap-format/parser').stream()` returns a new-line-chunked stream of parsed TAP. It is a normal stream, and therefore exposes the very useful `pipe()` method.
 
 ## Run Tests
 
