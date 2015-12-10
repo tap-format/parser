@@ -1,5 +1,5 @@
 {
-  "name": "@untap/parser",
+  "name": "@tap-format/parser",
   "version": "0.1.1",
   "description": "Parse TAP output",
   "main": "index.js",
@@ -7,27 +7,9 @@
     "test": "tape test/*.js"
   },
   "bin": {
-    "untap-parser": "bin/cmd.js"
+    "tap-format-parser": "bin/cmd.js",
+    "tf-parser": "bin/cmd.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/untap/parse.git"
-  },
-  "keywords": [
-    "tap",
-    "parse",
-    "out",
-    "stream",
-    "test",
-    "anything",
-    "protocol"
-  ],
-  "author": "Scott Corgan",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/untap/parse/issues"
-  },
-  "homepage": "https://github.com/untap/parse#readme",
   "devDependencies": {
     "highland": "^2.5.1",
     "tape": "^4.2.2",
@@ -41,5 +23,24 @@
     "rx": "^4.0.7",
     "rx-node": "^1.0.1",
     "split": "^1.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tap-format/parse.git"
+  },
+  "keywords": [
+    "tap",
+    "parse",
+    "out",
+    "stream",
+    "test",
+    "anything",
+    "protocol"
+  ],
+  "author": "Scott Corgan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tap-format/parser/issues"
+  },
+  "homepage": "https://github.com/tap-format/parser#readme"
 }
