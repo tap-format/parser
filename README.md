@@ -1,7 +1,7 @@
 
 <img src="https://cloud.githubusercontent.com/assets/974723/11757403/e6465608-a015-11e5-8245-979f027e558b.png">
 
-# tap-format parser [![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=flat-square)](https://travis-ci.org/tap-format/parser)
+# tap-format parser [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://travis-ci.org/tap-format/parser) [![codecov.io](https://codecov.io/github/tap-format/parser/coverage.svg?branch=master)](https://codecov.io/github/tap-format/parser?branch=master)
 
 A highly verbose parser for the [Test Anything Protocol](https://testanything.org/) that exposes an [observable](https://github.com/Reactive-Extensions/RxJS) and streaming interface.
 
