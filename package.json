@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tap-format/parse.git"
+    "url": "git+https://github.com/tap-format/parser.git"
   },
   "keywords": [
     "tap",
