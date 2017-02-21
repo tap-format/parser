@@ -271,6 +271,22 @@ test('parses result values', function (t) {
   }
 })
 
+test('parses yaml indented more in failing assertions', function (t) {
+
+  t.plan(1)
+
+  return function (done) {
+
+    tapOut.observeStream(fixtureStream('yaml-indented-more')).failingAssertions$
+      .forEach(function (assertion) {
+
+        t.deepEqual(assertion.diagnostic, {
+          a: 'b'
+        }, 'parsed yaml block')
+      })
+  }
+})
+
 // Helpers
 
 function yamlTapStream () {
@@ -281,6 +297,11 @@ function yamlTapStream () {
 function basicTapStream () {
 
   return fs.createReadStream(__dirname + '/fixtures/basic.txt')
+}
+
+function fixtureStream (name) {
+
+  return fs.createReadStream(__dirname + '/fixtures/' + name + '.txt')
 }
 
 function filterTypeInObservable$ (stream, type) {
