@@ -92,7 +92,7 @@ $ something-that-produces-tap | tap-format-parser
 Given a streaming input, the parser will expose and [RXjs Observable](https://github.com/Reactive-Extensions/RxJS) chunked by new lines. In addition, the parser exposes the following properties as Observables as convenience methods for the parsed TAP.
 
 ```js
-var parser = requrie('@tap-format/parser')
+var parser = require('@tap-format/parser')
 
 var stream = process.stdin
 var tap$ = parser.observeStream(stream)
